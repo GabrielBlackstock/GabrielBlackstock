@@ -2,7 +2,7 @@
 - 👀 I’m interested in Quant Development
 - 🌱 I’m currently learning Python
 - 💞️ I’m looking to collaborate on Quant projects
-- 📫 How to reach me Gabriel Blackstock on Linkedin
+- 📫 How to reach me : Gabriel Blackstock on Linkedin
 - ## Project Links
 - [EMA Project Code](EMA%20Project.md)
 - [EMA Project Description](EMA%20Project%20Description.md)
