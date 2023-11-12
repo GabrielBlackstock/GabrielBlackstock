@@ -7,6 +7,8 @@
 - [EMA Project Code](EMA%20Project.md)
 - [EMA Project Description](EMA%20Project%20Description.md)
 - [Positioning Analysis Project](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/PositioningAnalysis.ipynb)
+- [Positioning Analysis explanation](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/PositioningAnalysis(Readme).md)
+
 <!---
 GabrielBlackstock/GabrielBlackstock is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
