@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @GabrielBlackstock
-- 👀 I’m interested in Quant Development
+- 👀 I’m interested in Quantitative Development
 - 🌱 I’m currently learning Python
 - 💞️ I’m looking to collaborate on Quant projects
 - 📫 How to reach me : Gabriel Blackstock on Linkedin
