@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @GabrielBlackstock
-- 👀 I’m interested in Quantitative Development
+- 👀 I’m interested in building a range of technological & financial projects.
 - 🌱 I’m currently learning Python
-- 💞️ I’m looking to collaborate on Quant projects
+- 💞️ I’m looking to collaborate on technological & financial projects
 - 📫 How to reach me : Gabriel Blackstock on Linkedin
 - ## Project Links
 - [EMA Project Code](EMA%20Project.md)
