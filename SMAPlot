@@ -53,5 +53,8 @@ def plot_candlesticks_with_sma(symbol=symbol, timeframe=timeframe, limit=limit):
     mpf.plot(df, type='candle', style=custom_style, volume=True, addplot=sma_plot, title=f'Candlestick chart and 50-period SMA for {symbol}', ylabel='Price')
 
 # Checks if the script is being run directly (not imported) and then calls the function to execute.
+
+![Candlestick chart and 50-period SMA for SOLUSDTM](images/SMAPlot.png)
+
 if __name__ == "__main__":
     plot_candlesticks_with_sma()
