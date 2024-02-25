@@ -1,0 +1,57 @@
+# Import necessary libraries
+import ccxt  # Used to connect to crypto exchange markets for trading.
+import pandas as pd  # Provides data structures and data analysis tools.
+import mplfinance as mpf  # Specialized library for financial data visualization.
+
+# Setup exchange connection using ccxt library. The API key, secret, and password are used for authentication.
+kucoinfutures = ccxt.kucoinfutures({
+    'enableRateLimit': True,  # Enables rate limit to avoid being banned by the exchange for too many requests.
+    "apiKey": '####',
+    "secret": '######',
+    "password": '####'
+})
+
+symbol = "SOLUSDTM"  # Symbol for the cryptocurrency pair to fetch data for.
+timeframe = '4h'  # Sets the timeframe for each candlestick as 4 hours.
+limit = 200  # The number of candlesticks to fetch. Here, 200 periods of 4h candlesticks.
+
+# Function to fetch market data, calculate the SMA, and plot candlestick charts.
+def plot_candlesticks_with_sma(symbol=symbol, timeframe=timeframe, limit=limit):
+    print('Fetching market data...')
+
+    # Fetches OHLCV (open, high, low, close, volume) data for the specified symbol and timeframe.
+    ohlcv = kucoinfutures.fetch_ohlcv(symbol, timeframe, limit=limit)
+    
+    # Converts the fetched data into a pandas DataFrame for analysis and visualization.
+    df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+    df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')  # Converts timestamp to datetime.
+    df.set_index('timestamp', inplace=True)  # Sets the timestamp as the DataFrame index.
+
+    # Calculates the 50-period simple moving average (SMA) of the closing prices.
+    # The 50-day SMA is commonly used to gauge the medium term trend of a security.
+    df['sma50'] = df['close'].rolling(window=50, min_periods=1).mean()
+
+    # Sets up market colors and style for the mplfinance plot.
+    market_colors = mpf.make_marketcolors(
+        up='green', down='red',  # Colors for up and down candlesticks.
+        edge='inherit',  # Uses default edge color.
+        wick={'up':'green', 'down':'red'},  # Colors for the wicks.
+        volume='gray',  # Color for the volume bars.
+        inherit=True  # Inherits other properties from the default style.
+    )
+
+    # Creates a custom style for the mplfinance plot.
+    custom_style = mpf.make_mpf_style(
+        rc={'axes.facecolor': 'white', 'figure.facecolor': 'white', 'grid.color': 'gray'},
+        marketcolors=market_colors
+    )
+
+    # Prepares the SMA data for plotting as an additional line on the chart.
+    sma_plot = [mpf.make_addplot(df['sma50'], color='purple', width=2)]
+
+    # Plots the candlestick chart along with the 50-period SMA line.
+    mpf.plot(df, type='candle', style=custom_style, volume=True, addplot=sma_plot, title=f'Candlestick chart and 50-period SMA for {symbol}', ylabel='Price')
+
+# Checks if the script is being run directly (not imported) and then calls the function to execute.
+if __name__ == "__main__":
+    plot_candlesticks_with_sma()
