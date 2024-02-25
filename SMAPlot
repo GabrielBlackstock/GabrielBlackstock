@@ -58,3 +58,6 @@ def plot_candlesticks_with_sma(symbol=symbol, timeframe=timeframe, limit=limit):
 
 if __name__ == "__main__":
     plot_candlesticks_with_sma()
+
+![Candlestick chart and 50-period SMA for SOLUSDTM](images/SMAPlot.png)
+
