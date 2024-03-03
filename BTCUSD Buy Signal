@@ -1,0 +1,64 @@
+```python
+import pandas as pd
+import numpy as np
+import mplfinance as mpf
+import ccxt
+import matplotlib.pyplot as plt
+
+# Initialize a connection to the Kucoin Futures API using provided credentials.
+kucoinfutures = ccxt.kucoinfutures({
+    'enableRateLimit': True,
+    "apiKey": '####',
+    "secret": '###',
+    "password": '####'
+})
+
+# Define the symbol and timeframe for the data to be fetched.
+symbol = "XBTUSDTM"
+timeframe = '1d'
+
+# Retrieve historical OHLCV data from Kucoin Futures and convert it into a pandas DataFrame.
+ohlcv = kucoinfutures.fetch_ohlcv(symbol, timeframe)
+df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+df.set_index('timestamp', inplace=True)
+
+# Generate a buy signal based on the condition where the close price is at least 4% higher than the open price.
+df['buy_signal'] = np.where(((df['close'] - df['open']) / df['open']) * 100 >= 4, df['low'], np.nan)
+
+# Add columns to check if the closing price and volume from two days ago were positive.
+df['prev_price_positive'] = df['close'].shift(2) > df['open'].shift(2)
+df['prev_volume_positive'] = df['volume'].shift(2) > 0
+
+# Define a function to identify bullish engulfing candlestick patterns.
+def is_bullish_engulfing(row, prev_row):
+    if prev_row is None:
+        return False
+    if row['close'] > row['open'] and prev_row['close'] < prev_row['open'] and row['close'] >= prev_row['open'] and row['open'] <= prev_row['close']:
+        return True
+    return False
+
+# Apply the bullish engulfing function to the DataFrame to find patterns.
+df['bullish_engulfing'] = [is_bullish_engulfing(df.iloc[i], df.iloc[i-1]) if i > 0 else False for i in range(len(df))]
+df['bullish_engulfing'] = df['bullish_engulfing'].shift(1)  # Align the signals with the corresponding days.
+
+# Update the buy signal to incorporate bullish engulfing pattern along with previous price and volume conditions.
+df['buy_signal'] = np.where((df['bullish_engulfing'] == True) & df['prev_price_positive'] & df['prev_volume_positive'] & (df['volume'] > 0), df['low'], df['buy_signal'])
+df['buy_signal'] = np.where((((df['close'] - df['open']) / df['open']) * 100 >= 4) & df['prev_price_positive'] & df['prev_volume_positive'] & (df['volume'] > 0), df['low'], df['buy_signal'])
+
+# Set up the market colors and style for the mplfinance plot.
+market_colors = mpf.make_marketcolors(up='green', down='red', edge='inherit', wick={'up':'green', 'down':'red'}, volume='gray', inherit=True)
+custom_style = mpf.make_mpf_style(rc={'axes.facecolor': 'white', 'figure.facecolor': 'white', 'grid.color': 'gray'}, marketcolors=market_colors)
+
+# Create a scatter plot to mark the buy signals on the candlestick chart.
+buy_markers = mpf.make_addplot(df['buy_signal'], type='scatter', markersize=30, marker='^', color='darkgreen', label='Potential Buy Signal')
+
+# Plot the candlestick chart including the buy signals and customize the figure size.
+fig, axes = mpf.plot(df, type='candle', style=custom_style, volume=True, addplot=[buy_markers], title=f'{symbol} Bullish Engulfing Candle Strategy', figratio=(12,4), returnfig=True)
+
+# Adjust the legend's location on the chart.
+axes[0].legend(loc='center', bbox_to_anchor=(0.5, 0.92))
+
+# Display the plot.
+plt.show()
+```
