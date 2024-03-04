@@ -1,0 +1,58 @@
+from datetime import datetime
+import backtrader as bt
+import backtrader.analyzers as btanalyzers
+
+# SMA Crossover Strategy
+class SmaCross(bt.SignalStrategy):
+    def __init__(self):
+        sma = bt.ind.SMA(period=50)  # Define a 50-period simple moving average
+        price = self.data  # Get the price data
+        crossover = bt.ind.CrossOver(price, sma)  # Define a crossover signal between price and SMA
+        self.signal_add(bt.SIGNAL_LONG, crossover)  # Add a signal to go long when crossover occurs
+
+cerebro = bt.Cerebro()  # Create a cerebro engine for backtesting
+
+cerebro.addstrategy(SmaCross)  # Add the SmaCross strategy to the cerebro engine
+
+data = bt.feeds.YahooFinanceCSVData(
+    dataname='/Applications/Quant /BTC-USD Data csv.csv',
+    fromdate=datetime(2019, 3, 3),  # Start date for the data
+    todate=datetime(2024, 3, 3),  # End date for the data
+    reverse=False  # Do not reverse the data order
+)
+
+cerebro.broker.set_cash(1000000)  # Set initial cash amount to $1,000,000
+
+cerebro.broker.setcommission(commission=0.001)  # Set the commission rate to 0.1%
+
+cerebro.adddata(data)  # Add the data to the cerebro engine
+
+cerebro.addsizer(bt.sizers.AllInSizer, percents=95)  # Set the sizer to go all in with 95% of available cash
+
+cerebro.addanalyzer(btanalyzers.SharpeRatio, _name='sharpe')  # Add Sharpe Ratio analyzer
+cerebro.addanalyzer(btanalyzers.Transactions, _name='tx')  # Add Transactions analyzer
+cerebro.addanalyzer(btanalyzers.TradeAnalyzer, _name='trades')  # Add Trade Analyzer
+
+back = cerebro.run()  # Execute the backtest
+
+initial_value = cerebro.broker.startingcash  # Get the initial portfolio value
+
+final_value = cerebro.broker.getvalue()  # Get the final portfolio value
+
+sharpe = back[0].analyzers.sharpe.get_analysis()  # Get the Sharpe ratio from the analyzer
+
+txs = back[0].analyzers.tx.get_analysis()  # Get transaction details
+
+txamount = len(txs)  # Get the number of transactions
+
+# ROI
+roi = (final_value - initial_value) / initial_value * 100  # Calculate ROI
+
+# print the results
+print(f"Sharpe ratio: {sharpe}")  # Print the Sharpe ratio
+print(f"Number of transactions: {txamount}")  # Print the number of transactions
+print(f"Initial value: {initial_value}")  # Print the initial portfolio value
+print(f"Final value: {final_value}")  # Print the final portfolio value
+print(f"ROI: {roi:.2f}%")  # Print the ROI
+
+cerebro.plot()  # Plot the backtest results
