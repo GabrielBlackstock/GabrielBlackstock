@@ -1,0 +1,70 @@
+from datetime import datetime  # Import datetime module
+import backtrader as bt  # Import Backtrader library
+import backtrader.analyzers as btanalyzers  # Import analyzers from Backtrader
+
+# Define a strategy class based on Backtrader's Strategy class
+class RsiSignalStrategy(bt.Strategy):
+    params = (
+        ('rsi_period', 14),  # Parameter for RSI period
+        ('rsi_oversold', 30),  # Parameter for oversold threshold
+        ('rsi_overbought', 70),  # Parameter for overbought threshold
+    )
+
+    def __init__(self):
+        # Create an RSI indicator using the close price and the provided period
+        self.rsi = bt.indicators.RSI(self.data.close, period=self.params.rsi_period)
+
+    def next(self):
+        # Check if there is no existing position and RSI is below the oversold threshold
+        if not self.position and self.rsi < self.params.rsi_oversold:
+            self.buy()  # Execute a buy order
+        # Check if there is an existing position and RSI is above the overbought threshold
+        elif self.position and self.rsi > self.params.rsi_overbought:
+            self.sell()  # Execute a sell order
+
+# Create a cerebro instance
+cerebro = bt.Cerebro()
+# Add the RSI strategy to cerebro
+cerebro.addstrategy(RsiSignalStrategy)
+# Set the initial cash amount
+cerebro.broker.set_cash(1000000)
+# Set the commission rate
+cerebro.broker.setcommission(commission=0.001)
+# Set the position size to be all-in with 95% of the available cash
+cerebro.addsizer(bt.sizers.AllInSizer, percents=95)
+
+# Define the data source using Yahoo Finance CSV data
+data = bt.feeds.YahooFinanceCSVData(
+    dataname='/Applications/Quant /TSLA_2014-03-03_to_2024-03-03.csv',  # CSV file path
+    fromdate=datetime(2019, 3, 3),  # Start date
+    todate=datetime(2024, 3, 3),  # End date
+    reverse=False  # Reverse the data or not
+)
+
+# Add the data to cerebro
+cerebro.adddata(data)
+# Add analyzers to cerebro
+cerebro.addanalyzer(btanalyzers.SharpeRatio, _name='sharpe')
+cerebro.addanalyzer(btanalyzers.Transactions, _name='tx')
+cerebro.addanalyzer(btanalyzers.TradeAnalyzer, _name='trades')
+
+# Run the backtest
+back = cerebro.run()
+
+# Get backtest results
+initial_value = cerebro.broker.startingcash
+final_value = cerebro.broker.getvalue()
+sharpe = back[0].analyzers.sharpe.get_analysis()
+txs = back[0].analyzers.tx.get_analysis()
+txamount = len(txs)
+roi = (final_value - initial_value) / initial_value * 100
+
+# Print the results
+print(f"Sharpe ratio: {sharpe['sharperatio']}")
+print(f"Number of transactions: {txamount}")
+print(f"Initial value: ${initial_value:,.2f}")
+print(f"Final value: ${final_value:,.2f}")
+print(f"ROI: {roi:.2f}%")
+
+# Plot the backtest results
+cerebro.plot()
