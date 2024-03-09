@@ -1,0 +1,63 @@
+python
+import ccxt
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Initialise the Kucoin Futures API with your credentials.
+# 'enableRateLimit' is set to True to respect the rate limits of the Kucoin API.
+exchange = ccxt.kucoinfutures({
+    'enableRateLimit': True,
+    'apiKey': '65b6948d9c73750001033dc6',
+    'secret': '187264cf-3abf-49a0-9854-1db019882a07',
+    'password': 'JaylenGoat10!'
+})
+
+# Define the cryptocurrency symbol and the timeframe for fetching historical data.
+# We're using weekly data for a more aggregated view suitable for swing trading.
+symbol = 'BTC/USDT:USDT'
+timeframe = '1w'
+# Set the start date from which historical data will be retrieved.
+# The date is specified in the ISO8601 format.
+since = exchange.parse8601('2023-07-01T00:00:00Z')
+# Retrieve historical OHLCV data from Kucoin.
+ohlcv = exchange.fetch_ohlcv(symbol, timeframe, since)
+# Convert the data into a Pandas DataFrame for easier analysis and visualisation.
+df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+# Convert timestamps from milliseconds to a more readable datetime format.
+df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+# Set the timestamp as the index of the DataFrame.
+df.set_index('timestamp', inplace=True)
+
+# Calculate the Exponential Moving Averages (EMA) for the close prices.
+# EMAs are more reactive to recent price changes than Simple Moving Averages (SMAs).
+df['EMA12'] = df['close'].ewm(span=12, adjust=False).mean()
+df['EMA26'] = df['close'].ewm(span=26, adjust=False).mean()
+
+# Begin plotting the data.
+plt.figure(figsize=(14, 7))
+
+# Iterate through the DataFrame and plot the closing price for each time period.
+# The colour of the dot will indicate the trend based on the EMAs.
+# Green for when the 12-day EMA is above the 26-day EMA, red for when it is below, and yellow for when they are equal.
+for i in range(len(df)):
+    if df['EMA12'].iloc[i] > df['EMA26'].iloc[i]:
+        plt.scatter(df.index[i], df['close'].iloc[i], color='green')  # Bullish trend indication.
+    elif df['EMA12'].iloc[i] < df['EMA26'].iloc[i]:
+        plt.scatter(df.index[i], df['close'].iloc[i], color='red')  # Bearish trend indication.
+    else:
+        plt.scatter(df.index[i], df['close'].iloc[i], color='yellow')  # Neutral trend.
+
+# Plot the EMAs to provide a visual indicator of the trend.
+plt.plot(df['EMA12'], label='12-Day EMA', color='blue')
+plt.plot(df['EMA26'], label='26-Day EMA', color='orange')
+
+# Title and labels to improve the readability of the plot.
+plt.title(f'{symbol} Price and Trend Indicator')
+plt.xlabel('Date')
+plt.ylabel('Price')
+
+# A legend to identify the plotted EMAs.
+plt.legend()
+
+# Render the plot.
+plt.show()
