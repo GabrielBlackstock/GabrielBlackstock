@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 # 'enableRateLimit' is set to True to respect the rate limits of the Kucoin API.
 exchange = ccxt.kucoinfutures({
     'enableRateLimit': True,
-    'apiKey': '65b6948d9c73750001033dc6',
-    'secret': '187264cf-3abf-49a0-9854-1db019882a07',
-    'password': 'JaylenGoat10!'
+    'apiKey': '####',
+    'secret': '####',
+    'password': '#####!'
 })
 
 # Define the cryptocurrency symbol and the timeframe for fetching historical data.
