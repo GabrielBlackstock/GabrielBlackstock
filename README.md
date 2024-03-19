@@ -8,7 +8,13 @@
 - [Positioning Analysis Project](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/PositioningAnalysis.ipynb)
 - [Positioning Analysis Explanation](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/PositioningAnalysis(Readme).md)
 - [TSLA RSI Strat](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/TSLA%20RSI%20Strat)
+- [TSLA RSI Strategy Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/TSLA%20RSI%20Strategy%20(readme).md)
 - [SOL SMA Plot](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/$SOL%20SMA%20Plot)
+- [SOL SMA Plot Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/$SOL%20SMA%20Plot%20(ReadMe).md)
 - [12-26 EMA Visualisation](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/12-26%20EMA%20Visualisation)
+- [12-26 EMA Visualisation Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/12-26%20EMA%20Trend%20Visualisation%20(Readme).md)
 - [BTCUSD 50SMA Backtest](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/BTCUSD%2050SMA%20Backtest)
+- [BTCUSD 50SMA Backtest Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/BTCUSD%2050SMA%20Backtest%20lot%20(ReadMe).md)
 - [BTCUSD Buy Signal](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/BTCUSD%20Buy%20Signal)
+- [BTCUSD Buy Signal Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/BTCUSD%20Buy%20Signal%20(ReadMe).md)
+
