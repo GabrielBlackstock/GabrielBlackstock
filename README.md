@@ -1,8 +1,8 @@
 - 👋 Hi, I’m @GabrielBlackstock
 - 👀 I’m interested in building a range of technological & financial projects.
 - 🌱 I’m currently learning Python, Java, C++
-- 📫 How to reach me : Gabriel Blackstock on Linkedin
-- ## Project Links
+- 📫 How to reach me: Gabriel Blackstock on Linkedin
+## Project Links
 - [EMA Project Code](EMA%20Project.md)
 - [EMA Project Description](EMA%20Project%20Description.md)
 - [Positioning Analysis Project](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/PositioningAnalysis.ipynb)
@@ -17,4 +17,5 @@
 - [BTCUSD 50SMA Backtest Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/BTCUSD%2050SMA%20Backtest%20lot%20(ReadMe).md)
 - [BTCUSD Buy Signal](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/BTCUSD%20Buy%20Signal)
 - [BTCUSD Buy Signal Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/BTCUSD%20Buy%20Signal%20(ReadMe).md)
-
+- [TSLA Mean Reversion Code](https://github.com/GabrielBlackstock/TSLA-Mean-Reversion/blob/main/TSLA%20Mean%20Reversion%20Code)
+- [TSLA Mean Reversion Readme](https://github.com/GabrielBlackstock/TSLA-Mean-Reversion/blob/main/TSLA%20Mean%20Reversion%20readme.md)
