@@ -1,7 +1,8 @@
-- 👋 Hi, I’m @GabrielBlackstock
-- 👀 I’m interested in building a range of technological & financial projects.
-- 🌱 I’m currently learning Python, Java, C++
-- 📫 How to reach me: Gabriel Blackstock on Linkedin
+-  Hi, I’m @GabrielBlackstock
+- I’m interested in building a range of technological & financial projects.
+- I’m currently learning Python, Java, C++
+- How to reach me: Gabriel Blackstock on Linkedin
+
 ## Project Links
 - [EMA Project Code](EMA%20Project.md)
 - [EMA Project Description](EMA%20Project%20Description.md)
@@ -19,3 +20,13 @@
 - [BTCUSD Buy Signal Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/BTCUSD%20Buy%20Signal%20(ReadMe).md)
 - [TSLA Mean Reversion Code](https://github.com/GabrielBlackstock/TSLA-Mean-Reversion/blob/main/TSLA%20Mean%20Reversion%20Code)
 - [TSLA Mean Reversion Readme](https://github.com/GabrielBlackstock/TSLA-Mean-Reversion/blob/main/TSLA%20Mean%20Reversion%20readme.md)
+- [Next-token-prediction](https://github.com/GabrielBlackstock/Next-token-prediction---GPT2/blob/main/Next-token-prediction)
+- [Next-token-prediction Readme](https://github.com/GabrielBlackstock/Next-token-prediction---GPT2/blob/main/Next-token-prediction%20readme.md)
+- [Song Recommendation Engine](https://github.com/GabrielBlackstock/Song-Recommendation-Engine/blob/main/Song%20Recommendation%20Engine)
+- [Song Recommendation Engine Readme](https://github.com/GabrielBlackstock/Song-Recommendation-Engine/blob/main/Song%20recommendation%20engine%20readme.md)
+- [Data Visualization.py](https://github.com/GabrielBlackstock/Cybersecurity-Data-Visualisation-/blob/main/Data%20Visualization.py)
+- [Cybersec Readme](https://github.com/GabrielBlackstock/Cybersecurity-Data-Visualisation-/blob/main/Cybersec%20readme.md)
+- [Ridge MSFT](https://github.com/GabrielBlackstock/Ridge-MSFT/blob/main/ridge%20msft)
+- [Ridge MSFT Readme](https://github.com/GabrielBlackstock/Ridge-MSFT/blob/main/ridge%20readme).md)
+- [GUI.py](https://github.com/GabrielBlackstock/Project-Gui/blob/main/gui.py)
+- [GUI Readme](https://github.com/GabrielBlackstock/Project-Gui/blob/main/gui%20readme).md)
