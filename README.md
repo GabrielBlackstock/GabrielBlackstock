@@ -1,6 +1,6 @@
 - Hi, I’m @GabrielBlackstock
 - I’m interested in building a range of technological & financial projects.
-- I’m currently learning Python, Java, C++
+- I’m currently learning Python, Java, C++, SQL, PowerBI, Dax.
 - How to reach me: Gabriel Blackstock on LinkedIn
 
 ## Project Links
