@@ -27,7 +27,7 @@
 - [TSLA Mean Reversion Code](https://github.com/GabrielBlackstock/TSLA-Mean-Reversion/blob/main/TSLA%20Mean%20Reversion%20Code)
 - [TSLA Mean Reversion Readme](https://github.com/GabrielBlackstock/TSLA-Mean-Reversion/blob/main/TSLA%20Mean%20Reversion%20readme.md)
 - [Clustering](https://github.com/GabrielBlackstock/Clustering/blob/main/Clustering%20Code)
-- [Clustering ReadMe](https://github.com/GabrielBlackstock/Clustering/blob/main/Cluster%20readme).md)
+- [Clustering ReadMe](https://github.com/GabrielBlackstock/Clustering/blob/main/Cluster%20readme)
 - [12-26 EMA Visualisation](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/12-26%20EMA%20Visualisation)
 - [12-26 EMA Visualisation Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/12-26%20EMA%20Trend%20Visualisation%20(Readme).md)
 - [Ridge MSFT](https://github.com/GabrielBlackstock/Ridge-MSFT/blob/main/ridge%20msft)
