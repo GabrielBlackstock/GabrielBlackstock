@@ -4,6 +4,8 @@
 - How to reach me: Gabriel Blackstock on LinkedIn
 
 ## Project Links
+- [Basic Bank Chatbot](https://github.com/GabrielBlackstock/Basic-bank-chatbot/blob/main/Basic%20bank%20chatbot)
+- [Basic Bank Chatbot ReadMe](https://github.com/GabrielBlackstock/Basic-bank-chatbot/blob/main/README.md)
 - [GUI.py](https://github.com/GabrielBlackstock/Project-Gui/blob/main/gui.py)
 - [GUI Readme](https://github.com/GabrielBlackstock/Project-Gui/blob/main/gui%20readme.md)
 - [EMA Project Code](EMA%20Project.md)
