@@ -1,36 +1,11 @@
-- Hi, I’m @GabrielBlackstock
-- I’m interested in building a range of technological & financial projects.
-- I’m currently learning Python, Java, C++, SQL, PowerBI, Dax.
-- How to reach me: Gabriel Blackstock on LinkedIn
+Hi, I’m @GabrielBlackstock
 
-## Project Links
-- [Basic Bank Chatbot](https://github.com/GabrielBlackstock/Basic-bank-chatbot/blob/main/Basic%20bank%20chatbot)
-- [Basic Bank Chatbot ReadMe](https://github.com/GabrielBlackstock/Basic-bank-chatbot/blob/main/README.md)
-- [GUI.py](https://github.com/GabrielBlackstock/Project-Gui/blob/main/gui.py)
-- [GUI Readme](https://github.com/GabrielBlackstock/Project-Gui/blob/main/gui%20readme.md)
-- [EMA Project Code](EMA%20Project.md)
-- [EMA Project Description](EMA%20Project%20Description.md)
-- [Song Recommendation Engine](https://github.com/GabrielBlackstock/Song-Recommendation-Engine/blob/main/Song%20Recommendation%20Engine)
-- [Song Recommendation Engine Readme](https://github.com/GabrielBlackstock/Song-Recommendation-Engine/blob/main/Song%20recommendation%20engine%20readme.md)
-- [TSLA RSI Strat](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/TSLA%20RSI%20Strat)
-- [TSLA RSI Strategy Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/TSLA%20RSI%20Strategy%20(readme).md)
-- [Data Visualization.py](https://github.com/GabrielBlackstock/Cybersecurity-Data-Visualisation-/blob/main/Data%20Visualization.py)
-- [Cybersec Readme](https://github.com/GabrielBlackstock/Cybersecurity-Data-Visualisation-/blob/main/Cybersec%20readme.md)
-- [BTCUSD Buy Signal](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/BTCUSD%20Buy%20Signal)
-- [BTCUSD Buy Signal Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/BTCUSD%20Buy%20Signal%20(ReadMe).md)
-- [Next-token-prediction](https://github.com/GabrielBlackstock/Next-token-prediction---GPT2/blob/main/Next-token-prediction)
-- [Next-token-prediction Readme](https://github.com/GabrielBlackstock/Next-token-prediction---GPT2/blob/main/Next-token-prediction%20readme.md)
-- [Positioning Analysis Project](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/PositioningAnalysis.ipynb)
-- [Positioning Analysis Explanation](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/PositioningAnalysis(Readme).md)
-- [SOL SMA Plot](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/$SOL%20SMA%20Plot)
-- [SOL SMA Plot Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/$SOL%20SMA%20Plot%20(ReadMe).md)
-- [TSLA Mean Reversion Code](https://github.com/GabrielBlackstock/TSLA-Mean-Reversion/blob/main/TSLA%20Mean%20Reversion%20Code)
-- [TSLA Mean Reversion Readme](https://github.com/GabrielBlackstock/TSLA-Mean-Reversion/blob/main/TSLA%20Mean%20Reversion%20readme.md)
-- [Clustering](https://github.com/GabrielBlackstock/Clustering/blob/main/Clustering%20Code)
-- [Clustering ReadMe](https://github.com/GabrielBlackstock/Clustering/blob/main/Cluster%20readme)
-- [12-26 EMA Visualisation](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/12-26%20EMA%20Visualisation)
-- [12-26 EMA Visualisation Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/12-26%20EMA%20Trend%20Visualisation%20(Readme).md)
-- [Ridge MSFT](https://github.com/GabrielBlackstock/Ridge-MSFT/blob/main/ridge%20msft)
-- [Ridge MSFT Readme](https://github.com/GabrielBlackstock/Ridge-MSFT/blob/main/ridge%20readme.md)
-- [BTCUSD 50SMA Backtest](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/BTCUSD%2050SMA%20Backtest)
-- [BTCUSD 50SMA Backtest Readme](https://github.com/GabrielBlackstock/GabrielBlackstock/blob/main/BTCUSD%2050SMA%20Backtest%20lot%20(ReadMe).md)
+Founder of Medalign, developing:
+
+AppointEase – a GP appointment-management platform for NHS primary care.
+
+DxLM – an AI-driven clinical decision-support platform for General Practitioners & Pharmacists.
+
+MSc Artificial Intelligence & Data Science postgraduate | Azure AI Engineer Associate
+
+I’m interested in healthtech, AI, machine learning, and data-driven innovation.
