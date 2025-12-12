@@ -2,9 +2,9 @@ Hi, I’m @GabrielBlackstock
 
 Founder of Medalign, developing:
 
-AppointEase – a GP appointment-management platform for NHS primary care.
+AppointEase — an autonomous appointment scheduling and waiting-list optimisation platform for NHS primary care.
 
-DxLM – an AI-driven clinical decision-support platform for General Practitioners.
+DxLM – A clinical decision support system for Acute Medicine, focusing on deterioration trajectories and safety-netting.
 
 MSc Artificial Intelligence & Data Science postgraduate | Azure AI Engineer Associate
 
